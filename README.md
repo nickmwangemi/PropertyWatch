@@ -16,27 +16,28 @@ Live Demo:
 ## Local Setup 
 1.  Clone the repo
 ```
-git clone https://github.com/nickmwangemi/PropertyWatch.git
+$ git clone https://github.com/nickmwangemi/PropertyWatch.git
 ```
 
 2. Change directory into the project folder
 ```
-cd PropertyWatch
+$ cd PropertyWatch
 ```
 
-3. Setup virtual environment
+3. Setup virtual environment and activate it
 
 ```
-virtualenv env
+$ virtualenv env
+$ source env/bin/activate
 ```
 4. Collect project dependencies
 ``` 
-pip freeze > requirements.txt
+$ pip freeze > requirements.txt
 ```
 
 5. Install dependencies
 ```
-pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 

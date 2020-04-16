@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from listings.models import Listing
 from agents.models import Agent
+from listings.choices import price_choices,bedroom_choices,county_choices
 
 
 # Create your views here.
@@ -8,6 +9,10 @@ def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
     context = {
         'listings':listings,
+        'county_choices':county_choices,
+        'bedroom_choices':bedroom_choices,
+        'price_choices':price_choices,
+
     }
     return render(request,'pages/index.html',context)
 

@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Listing
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from .choices import price_choices,bedroom_choices,county_choices
 
 # Create your views here.
 def index(request):
@@ -15,12 +16,54 @@ def index(request):
     }
     return render(request,'listings/listings.html',context)
 
+
 def listing(request,listing_id):
-    listing = Listing.objects.get(id=listing_id)
+    listing = get_object_or_404(Listing, pk=listing_id)
     context = {
         'listing':listing,
     }
     return render(request,'listings/listing.html',context)
+
       
 def search(request):
-    return render(request,'listings/search.html')
+    queryset_list = Listing.objects.order_by('-list_date')
+    
+    # Keywords
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            queryset_list = queryset_list.filter(description__icontains=keywords)
+
+    # City
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            queryset_list = queryset_list.filter(city__iexact=city)
+
+     # County
+    if 'county' in request.GET:
+        county = request.GET['county']
+        if county:
+            queryset_list = queryset_list.filter(county__iexact=county)
+
+    # Bedrooms
+    if 'bedrooms' in request.GET:
+        bedrooms =request.GET['bedrooms']
+        if bedrooms:
+            queryset_list = queryset_list.filter(bedrooms__lte=bedrooms)
+
+    # Price
+    if 'price' in request.GET:
+        price =request.GET['price']
+        if price:
+            queryset_list = queryset_list.filter(price__lte=price)
+
+
+    context = {
+        'county_choices':county_choices,
+        'bedroom_choices':bedroom_choices,
+        'price_choices':price_choices,
+        'listings': queryset_list,
+        'values': request.GET
+    }
+    return render(request,'listings/search.html',context)

@@ -25,7 +25,8 @@ SECRET_KEY = ')62&0(v_=25f+_i=k@+ku%nv$%_p(r@wra077(2%v@hzyzxmga'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','bca75460.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1','4cce76b5.ngrok.io']
+
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'pages',
     'listings',
     'agents',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,9 @@ STATICFILES_DIRS = [
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR:'danger'
+}

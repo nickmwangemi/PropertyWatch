@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'listings',
     'agents',
     'accounts',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ USE_L10N = True
 
 USE_THOUSAND_SEPARATOR = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -142,3 +143,10 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
+
+# Email config
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = True

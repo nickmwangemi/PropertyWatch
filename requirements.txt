@@ -70,8 +70,13 @@ persepolis==3.2.0
 pexpect==4.6.0
 Pillow==7.0.0
 protobuf==3.6.1
+<<<<<<< HEAD
 psutil==5.5.1
 psycopg2-binary==2.8.5
+=======
+psutil==5.6.6
+psycopg2==2.8.4
+>>>>>>> 5dc1801aa82d816b85fd407ea7ad701cbf60db84
 pycairo==1.16.2
 PyChromecast==4.1.0
 pycrypto==2.6.1
@@ -95,10 +100,18 @@ python-decouple==3.3
 pytz==2019.3
 pyxattr==0.6.1
 pyxdg==0.26
+<<<<<<< HEAD
 PyYAML==5.3.1
 reportlab==3.5.34
 requests==2.22.0
 requests-unixsocket==0.2.0
+=======
+PyYAML==5.1.2
+redis==2.10.6
+reportlab==3.5.23
+requests==2.23.0
+requests-unixsocket==0.1.5
+>>>>>>> 5dc1801aa82d816b85fd407ea7ad701cbf60db84
 SecretStorage==2.3.1
 setproctitle==1.1.10
 simplejson==3.16.0

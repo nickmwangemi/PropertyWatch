@@ -33,7 +33,7 @@ county_choices = {
     'Kwale':'Kwale',
     'Kilifi':'Kilifi',
     'Tana River':'Tana River',
-    'Lamu':'Lami',
+    'Lamu':'Lamu',
     'Taita-Taveta':'Taita-Taveta',
     'Garissa':'Garissa',
     'Wajir':'Wajir',

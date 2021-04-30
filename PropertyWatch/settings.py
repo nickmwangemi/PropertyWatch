@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'PropertyWatch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'properwatchdb',
+        'NAME': 'propertywatchdb',
         'USER': 'postgres',
         'PASSWORD': 'boom',
         'HOST':'localhost',
